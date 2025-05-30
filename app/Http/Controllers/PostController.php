@@ -9,16 +9,20 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     public function index(){
-        echo "POST::all <br>";
+        // echo "POST::all <br>";
         $posts = Post::all();
-        foreach($posts as $post){
-            echo $post."<br>";
-        }
+        // foreach($posts as $post){
+        //     echo $post."<br>";
+        // }
 
-        echo "POST::where->first() <br>";
-        $post_inp = Post::where('is_published', 0)->first();
-        echo $post_inp;
+        // echo "POST::where->first() <br>";
+        // $post_inp = Post::where('is_published', 0)->first();
+        // echo $post_inp;
+
+        return view('posts', compact('posts'));
     }
+
+
     public function create(){
         $posts= [
             [
