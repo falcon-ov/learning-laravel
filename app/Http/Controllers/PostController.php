@@ -9,53 +9,20 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     public function index(){
-        // echo "POST::all <br>";
+
         $posts = Post::all();
-        // foreach($posts as $post){
-        //     echo $post."<br>";
-        // }
 
-        // echo "POST::where->first() <br>";
-        // $post_inp = Post::where('is_published', 0)->first();
-        // echo $post_inp;
-
-        return view('posts', compact('posts'));
+        return view('post.index', compact('posts'));
     }
-
 
     public function create(){
-        $posts= [
-            [
-                'title' => 'title test1',
-                'content' => 'some content1',
-                'image' => 'path_to_img',
-                'likes' => 12345,
-                'is_published' => 1,
-            ],
-            
-            [
-                'title' => 'title test2',
-                'content' => 'some content2',
-                'image' => 'path_to_img',
-                'likes' => 9999,
-                'is_published' => 1,
-            ]
-        ];
-
-        foreach($posts as $post){
-            Post::create($post);
-        }
-
-        Post::create([
-            'title' => 'title test2',
-            'content' => 'some content2',
-            'image' => 'path_to_img',
-            'likes' => 9999,
-            'is_published' => 1,
-        ]);
-
-        dd("created");
+        return view('post.create');
     }
+
+    public function store(){
+        dd("asdasdasd");
+    }
+
 
     public function update(){
         $post = Post::find(6);

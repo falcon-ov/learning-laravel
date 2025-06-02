@@ -10,14 +10,16 @@ use App\Http\Controllers\AboutController;
 //     return view('welcome');
 // });
 
-Route::get('/posts', [PostController::class, 'index']);
+Route::get('/posts', [PostController::class, 'index'])->name('post.index');
 Route::get('posts/create', [PostController::class, 'create']);
+Route::post('posts', [PostController::class, 'store'])->name('post.store');
+
 Route::get('posts/update', [PostController::class, 'update']);
 Route::get('posts/delete', [PostController::class, 'delete']);
 Route::get('posts/restore', [PostController::class, 'restore']);
 Route::get('posts/first_or_create', [PostController::class, 'firstOrCreate']);
 Route::get('posts/update_or_create', [PostController::class, 'updateOrCreate']);
 
-Route::get('/main', [MainController::class, 'index']);
-Route::get('/contacts', [ContactsController::class, 'index']);
-Route::get('/about', [AboutController::class, 'index']);
+Route::get('/main', [MainController::class, 'index'])->name('main.index');
+Route::get('/contacts', [ContactsController::class, 'index'])->name('contact.index');
+Route::get('/about', [AboutController::class, 'index'])->name('about.index');
