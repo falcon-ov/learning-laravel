@@ -20,6 +20,12 @@
       <input type="text" class="form-control" name="image" id="image">
     </div>
   </div>
+    <div class="row mb-3">
+    <label for="category" class="col-sm-2 col-form-label">Post category_id</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="category_id" id="category_id">
+    </div>
+  </div>
   <button type="submit" class="btn btn-primary">Create</button>
 </form>
 @endsection
