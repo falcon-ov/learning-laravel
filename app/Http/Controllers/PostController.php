@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use  App\Models\Category;
 use  App\Models\Post;
+use  App\Models\PostTag;
 use  App\Models\Tag;
 
 use Illuminate\Http\Request;
@@ -38,14 +39,26 @@ class PostController extends Controller
     public function store()
     {
         $data = request()->validate([
-            'title' => 'string',
+            'title' => 'required|string',
             'content' => 'string',
             'image' => 'string',
             'category_id' => 'integer',
             'tags' => '',
         ]);
-        dd($data);
-        Post::create($data);
+        $tags = $data['tags'];
+        unset($data['tags']);
+
+        $post = Post::create($data);
+
+        $post->tags()->attach($tags); // привязываем в таблице связке к id поста id тэгов
+
+        // foreach($tags as $tag){
+        //     PostTag::firstOrCreate([
+        //         'tag_id' => $tag,
+        //         'post_id' => $post->id,
+        //     ]);
+        // }
+
         return redirect()->route('post.index');
     }
 
@@ -57,18 +70,25 @@ class PostController extends Controller
     public function edit(Post $post)
     {
         $categories = Category::all();
-        return view('post.edit', compact('post', 'categories'));
+        $tags = Tag::all();
+        return view('post.edit', compact('post', 'categories','tags'));
     }
 
     public function update(Post $post)
     {
         $data = request()->validate([
-            'title' => 'string',
+            'title' => 'required|string',
             'content' => 'string',
             'image' => 'string',
             'category_id' => 'integer',
+            'tags' => '',
         ]);
+        $tags = $data['tags'];
+        unset($data['tags']);
+
         $post->update($data);
+        $post->tags()->sync($tags);
+
         return redirect()->route('post.show', $post->id);
     }
 
