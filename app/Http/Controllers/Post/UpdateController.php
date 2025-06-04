@@ -7,16 +7,13 @@ use App\Http\Requests\Post\UpdateRequest;
 use  App\Models\Post;
 use Illuminate\Http\Request;
 
-class UpdateController extends Controller
+class UpdateController extends BaseController
 {
     public function __invoke(UpdateRequest $request, Post $post)
     {
         $data = $request->validate();
-        $tags = $data['tags'];
-        unset($data['tags']);
 
-        $post->update($data);
-        $post->tags()->sync($tags);
+        $this->service->update($post, $data);
 
         return redirect()->route('post.show', $post->id);
     }
