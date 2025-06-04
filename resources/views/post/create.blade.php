@@ -8,7 +8,7 @@
                 <input value="{{ old('title') }}" type="text" name="title" class="form-control" id="title">
             </div>
             @error('title')
-            <p class="text-danger">{{ $message }}</p>   
+                <p class="text-danger">{{ $message }}</p>
             @enderror
         </div>
         <div class="row mb-3">
@@ -17,7 +17,7 @@
                 <textarea class="form-control" name="content" id="content">{{ old('content') }}</textarea>
             </div>
             @error('content')
-            <p class="text-danger">{{ $message }}</p>   
+                <p class="text-danger">{{ $message }}</p>
             @enderror
         </div>
         <div class="row mb-3">
@@ -26,24 +26,22 @@
                 <input value="{{ old('image') }}" type="text" class="form-control" name="image" id="image">
             </div>
             @error('image')
-            <p class="text-danger">{{ $message }}</p>   
+                <p class="text-danger">{{ $message }}</p>
             @enderror
         </div>
         <select class="form-select mb-3" aria-label="Default select example" name="category_id">
             @foreach ($categories as $category)
-                <option
-                    {{ old('category_id') == $category->id ? 'selected' : ''}}
-
-                value="{{ $category->id }}">{{ $category->title }}</option>
+                <option {{ old('category_id') == $category->id ? 'selected' : '' }} value="{{ $category->id }}">
+                    {{ $category->title }}</option>
             @endforeach
         </select>
         <select class="form-select" multiple aria-label="multiple select example" name="tags[]">
             @foreach ($tags as $tag)
                 <option
-                
-                {{ /* TODO: save selection when error*/ }}
-
-                value="{{ $tag->id }}">{{ $tag->title }}</option>
+                    @if (old('tags')) @foreach (old('tags') as $oldTag)
+                    {{ $oldTag == $tag->id ? 'selected' : '' }}
+                @endforeach @endif
+                    value="{{ $tag->id }}">{{ $tag->title }}</option>
             @endforeach
         </select>
 
