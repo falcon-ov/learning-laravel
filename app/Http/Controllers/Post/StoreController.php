@@ -9,12 +9,12 @@ use Illuminate\Http\Request;
 
 class StoreController extends BaseController
 {
-    public function __invoke(StoreRequest $request)
+    public function __invoke(StoreRequest $request) //Controller
     {
-        $data = $request->validate();
+        $data = $request->validate();               //-> Request
 
-        $this->service->store($data);
+        $this->service->store($data);               //-> Service -> Model
 
-        return redirect()->route('post.index');
+        return redirect()->route('post.index');     //-> Route -> Controller --(Model)--> View
     }
 }

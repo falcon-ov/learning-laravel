@@ -40,13 +40,6 @@ class PostController extends Controller
 
         $post->tags()->attach($tags); // привязываем в таблице связке к id поста id тэгов
 
-        // foreach($tags as $tag){
-        //     PostTag::firstOrCreate([
-        //         'tag_id' => $tag,
-        //         'post_id' => $post->id,
-        //     ]);
-        // }
-
         return redirect()->route('post.index');
     }
 
