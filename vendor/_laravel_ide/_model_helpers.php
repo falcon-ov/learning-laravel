@@ -336,6 +336,7 @@ namespace App\Models {
      * @method static \Illuminate\Database\Eloquent\Builder<Post>|Post whereUpdatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Post>|Post whereDeletedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Post>|Post whereCategoryId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Post>|Post filter()
      * @method static \Illuminate\Database\Eloquent\Builder<Post>|Post newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Post>|Post newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Post>|Post query()

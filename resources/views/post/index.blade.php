@@ -8,7 +8,7 @@
             <div><a href=" {{ route('post.show', $post->id) }} ">{{ $post->id }}. {{ $post->title }}</a></div>
         @endforeach
        <div class="container">
-            {{$posts->links()}}
+            {{$posts->withQueryString()->links()}}
         </div>
     </div>
 @endsection
