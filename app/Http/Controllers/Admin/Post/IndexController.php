@@ -10,8 +10,13 @@ use Illuminate\Http\Request;
 
 class IndexController extends Controller //without BaseController
 {
-    public function __invoke()
+    public function __invoke(FilterRequest $request)
     {
-        dd(11111);
+        $data = $request->validated();
+        $filter = app()->make(PostFilter::class, ['queryParams' => array_filter($data)]);
+        $posts = Post::filter($filter)->paginate(10);
+        // dd($posts);
+        // $posts = Post::paginate(10);
+        return view('admin.post.index', compact('posts'));
     }
 }
