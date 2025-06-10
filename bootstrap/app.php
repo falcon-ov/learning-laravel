@@ -14,6 +14,10 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'admin' => \App\Http\Middleware\AdminPanelMiddleware::class // Добавляем алиас admin
         ]);
+        $middleware->validateCsrfTokens(except: [
+        '/posts',
+        '/posts/*',
+    ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

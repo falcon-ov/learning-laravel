@@ -2,10 +2,13 @@
 
 namespace App\Providers;
 use Illuminate\Pagination\Paginator;
+use App\Models\User;
+use App\Policies\AdminPolicy;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
+
     /**
      * Register any application services.
      */
