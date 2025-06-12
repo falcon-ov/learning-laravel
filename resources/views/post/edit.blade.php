@@ -21,7 +21,7 @@
                 <input type="text" class="form-control" name="image" id="image" value="{{ $post->image }}">
             </div>
         </div>
-        <select class="form-select mb-3" aria-label="Default select example" name="category_id">
+        <select class="form-select mb-3" aria-label="Default select example" name="category">
             @foreach ($categories as $category)
                 <option {{ $category->id == $post->category->id ? 'selected' : '' }} value="{{ $category->id }}">
                     {{ $category->title }}</option>

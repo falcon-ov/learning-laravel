@@ -29,9 +29,9 @@
                 <p class="text-danger">{{ $message }}</p>
             @enderror
         </div>
-        <select class="form-select mb-3" aria-label="Default select example" name="category_id">
+        <select class="form-select mb-3" aria-label="Default select example" name="category">
             @foreach ($categories as $category)
-                <option {{ old('category_id') == $category->id ? 'selected' : '' }} value="{{ $category->id }}">
+                <option {{ old('category') == $category->id ? 'selected' : '' }} value="{{ $category->id }}">
                     {{ $category->title }}</option>
             @endforeach
         </select>

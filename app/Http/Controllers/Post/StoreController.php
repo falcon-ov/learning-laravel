@@ -14,11 +14,12 @@ class StoreController extends BaseController
     {
 
         $data = $request->validated();               //-> Request
-
+        dd($data);
         $post = $this->service->store($data);               //-> Service -> Model
 
-        return new PostResource($post);
+        
+        return $post instanceof Post ? new PostResource($post) : $post;
 
-        return redirect()->route('post.index');     //-> Route -> Controller --(Model)--> View
+        // return redirect()->route('post.index');     //-> Route -> Controller --(Model)--> View
     }
 }
