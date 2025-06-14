@@ -551,8 +551,11 @@ class ComposerStaticInit88970a0117c062eed55fa8728fc43833
     );
 
     public static $classMap = array (
+        'App\\Components\\ImportDataClient' => __DIR__ . '/../..' . '/app/Components/ImportDataClient.php',
+        'App\\Console\\Commands\\ImportJsonPlaceholderCommand' => __DIR__ . '/../..' . '/app/Console/Commands/ImportJsonPlaceholderCommand.php',
         'App\\Http\\Controllers\\AboutController' => __DIR__ . '/../..' . '/app/Http/Controllers/AboutController.php',
         'App\\Http\\Controllers\\Admin\\Post\\IndexController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/Post/IndexController.php',
+        'App\\Http\\Controllers\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/AuthController.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
@@ -578,7 +581,9 @@ class ComposerStaticInit88970a0117c062eed55fa8728fc43833
         'App\\Http\\Requests\\Post\\FilterRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Post/FilterRequest.php',
         'App\\Http\\Requests\\Post\\StoreRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Post/StoreRequest.php',
         'App\\Http\\Requests\\Post\\UpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Post/UpdateRequest.php',
+        'App\\Http\\Resources\\Category\\CategoryResource' => __DIR__ . '/../..' . '/app/Http/Resources/Category/CategoryResource.php',
         'App\\Http\\Resources\\Post\\PostResource' => __DIR__ . '/../..' . '/app/Http/Resources/Post/PostResource.php',
+        'App\\Http\\Resources\\Tag\\TagResource' => __DIR__ . '/../..' . '/app/Http/Resources/Tag/TagResource.php',
         'App\\Models\\Category' => __DIR__ . '/../..' . '/app/Models/Category.php',
         'App\\Models\\Post' => __DIR__ . '/../..' . '/app/Models/Post.php',
         'App\\Models\\Tag' => __DIR__ . '/../..' . '/app/Models/Tag.php',

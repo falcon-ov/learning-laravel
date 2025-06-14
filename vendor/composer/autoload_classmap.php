@@ -6,8 +6,11 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Components\\ImportDataClient' => $baseDir . '/app/Components/ImportDataClient.php',
+    'App\\Console\\Commands\\ImportJsonPlaceholderCommand' => $baseDir . '/app/Console/Commands/ImportJsonPlaceholderCommand.php',
     'App\\Http\\Controllers\\AboutController' => $baseDir . '/app/Http/Controllers/AboutController.php',
     'App\\Http\\Controllers\\Admin\\Post\\IndexController' => $baseDir . '/app/Http/Controllers/Admin/Post/IndexController.php',
+    'App\\Http\\Controllers\\AuthController' => $baseDir . '/app/Http/Controllers/AuthController.php',
     'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
     'App\\Http\\Controllers\\Auth\\LoginController' => $baseDir . '/app/Http/Controllers/Auth/LoginController.php',
@@ -33,7 +36,9 @@ return array(
     'App\\Http\\Requests\\Post\\FilterRequest' => $baseDir . '/app/Http/Requests/Post/FilterRequest.php',
     'App\\Http\\Requests\\Post\\StoreRequest' => $baseDir . '/app/Http/Requests/Post/StoreRequest.php',
     'App\\Http\\Requests\\Post\\UpdateRequest' => $baseDir . '/app/Http/Requests/Post/UpdateRequest.php',
+    'App\\Http\\Resources\\Category\\CategoryResource' => $baseDir . '/app/Http/Resources/Category/CategoryResource.php',
     'App\\Http\\Resources\\Post\\PostResource' => $baseDir . '/app/Http/Resources/Post/PostResource.php',
+    'App\\Http\\Resources\\Tag\\TagResource' => $baseDir . '/app/Http/Resources/Tag/TagResource.php',
     'App\\Models\\Category' => $baseDir . '/app/Models/Category.php',
     'App\\Models\\Post' => $baseDir . '/app/Models/Post.php',
     'App\\Models\\Tag' => $baseDir . '/app/Models/Tag.php',
